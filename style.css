@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/* ベース設定 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  height: 60px;            /* 高さを指定 */
+  padding: 10px 0;
+  position: fixed;          /* ← これが固定の指定！ */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;            /* 他要素の上に出す */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+  color: #a5c8e1;
+}
+
+main {
+  padding-top: 80px;  /* ヘッダーの高さ80px + 余裕 */
+}
+
+/* セクション共通 */
+.section-box {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  background-color: #fff;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.h1-bg-image {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 350px; /* お好みで調整可 */
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none; /* 画像がクリックや選択の邪魔をしない */
+}
+
+.h1-bg-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.h1-bg-wrapper h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #444;
+  transition: all 0.3s ease;
+  margin-top: -10px; /* 必要に応じて調整 */
+}
+
+/* 儚げなホバー効果（任意） */
+.h1-bg-wrapper h1 {
+  color: #6b7aa1;
+  text-shadow: 0 2px 6px rgba(107, 122, 161, 0.3);
+  transform: scale(1.03);
+}
+/* トップエリア */
+.about-box {
+  position: relative;
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 50px;  /* ← これで被り回避 */
+}
+
+.about-header {
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.about-header .subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+
+.about-flex {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap; /* モバイルで縦並びに */
+}
+
+/* 写真のラッパー */
+.about-wrapper {
+  flex: 0 0 auto;
+}
+
+/* 写真本体 */
+.about-photo {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+}
+
+/* テキスト部分 */
+.about-text {
+  flex: 1;
+  min-width: 260px;
+  line-height: 1.8;
+}
+
+/* モバイル対応：縦並び + 中央寄せ */
+@media (max-width: 640px) {
+  .about-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+
+/* フッター */
+.footer {
+  background-color: #e8f4f8;
+  padding: 30px 20px;
+  text-align: center;
+}
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}

@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+.top-box {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('icons/home.png'); /* デフォルトはPC用 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* スマホサイズ（〜768px以下） */
+@media screen and (max-width: 768px) {
+  .top-box {
+    background-image: url('icons/home\ 768.png'); /* スマホ用の画像 */
+  }
+}
+
+.top-text {
+  color: white; /* 文字色を白に設定 */
+  font-size: 5em; /* 文字サイズを大きめに */
+  font-weight: bold; /* 太字にする */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 軽い影を加えて読みやすくする */
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 8px;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* ボタンリンク */
+.btn-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+  border: 2px solid #a5c8e1;
+  border-radius: 24px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-link:hover {
+  background-color: #a5c8e1;
+  color: #fff;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 0;
+  margin-top: 10px;
+}
+.social-links li a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.social-links li a:hover {
+  color: #a5c8e1;
+}
+
+/* 横スライド */
+/* スライダーボタンの共通スタイル */
+.prev-button, .next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(173, 216, 230, 0.3); /* やさしい水色＋透明感 */
+  color: #5c6ac4; /* 紫陽花の花びらのような淡い青紫 */
+  border: 1px solid rgba(173, 216, 230, 0.5);
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(173, 216, 230, 0.3); /* 儚さを演出するやわらか影 */
+  backdrop-filter: blur(4px); /* ガラスっぽい透明感 */
+  transition: all 0.3s ease;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background: rgba(173, 216, 230, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+/* スライダーの親要素に relative を指定して、ボタンを正しく配置 */
+.works-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 横並びにする */
+/* スライダー全体を横に並べてスライドできるようにする */
+.slider-track {
+  display: flex;
+  transition: transform 1s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 各スライドのサイズを100%にして横幅分スライドさせる */
+.slide {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.slide img {
+  width: 80%;
+  height: 80%;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ホバー時の浮き上がりエフェクト */
+.slide img:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(173, 216, 230, 0.4); /* 水色系の影でやさしい印象に */
+}
+
+/* スキル */
+.skills-box {
+  background-color: #f7f9fa;
+  margin-top: 50px;
+  border-radius: 12px; /* ← これで角が丸くなります！ */
+}
+
+h2 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skill {
+  margin-bottom: 30px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill img {
+  width: 24px;
+  height: 24px;
+}
+
+.skill span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.percent {
+  font-size: 14px;
+  color: #666;
+}
+
+.skill-bar {
+  height: 8px;
+  background-color: #d9eaf2;
+  border-radius: 4px;
+  position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: #a5c8e1;
+  border-radius: 4px;
+}
+
+.skills-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.skill-category {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  border-left: 4px solid #a5c8e1;
+  padding-left: 10px;
+}
+
+.site-title {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+}
+

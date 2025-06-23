@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>HOME</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="index.css">
+		<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header class="header">
+			<div class="header-container">
+				<h2 class="site-title">OTAKI RUKA</h2>
+				<nav>
+					<ul class="nav-links">
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+						<li><a href="works.html">WORKS</a></li>
+						<li><a href="contact.html">CONTACT</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+<main>
+		<div class="top-box">
+			<div class="top-text">
+			</div>
+		</div>
+
+		<div class="section-box">
+			<div class="about-header">
+				<div class="about-box">
+					<div class="h1-bg-wrapper">
+						<img src="icons/hx.jpeg" alt="紫陽花" class="h1-bg-image">
+						<h1>ABOUT</h1>
+						<p class="subtitle">私について</p>
+					</div>
+				</div>
+			</div>
+			<div class="about-flex">
+				<div class="about-wrapper">
+					<img src="icons/me2.JPG" alt="プロフィール写真" class="about-photo">
+				</div>
+				<p class="about-text">
+					これまでバックエンド開発を主に行ってきましたが、作業効率<br>
+					向上のための資料作成にフロントエンドを活用してきました。<br>
+					フロントエンドはまだ始めたばかりですが、日々学びながら、<br>
+					使いやすく魅力的なWebデザインを目指してスキルを磨いています。
+				</p>
+			</div>
+			<h1>SKILLS</h1>
+				<div class="skill">
+					<div class="skill-header">
+						<div class="skill-info">
+							<img src="icons/html5.svg" alt="HTMLアイコン">
+							<span>HTML / CSS</span>
+						</div>
+						<span class="percent">75%</span>
+					</div>
+					<div class="skill-bar">
+						<div class="skill-fill" style="width: 75%"></div>
+					</div>
+				</div>
+				<div class="skill">
+					<div class="skill-header">
+						<div class="skill-info">
+							<img src="icons/vscode.svg" alt="VSCodeアイコン">
+							<span>Visual Studio Code</span>
+						</div>
+						<span class="percent">30%</span>
+					</div>
+					<div class="skill-bar">
+						<div class="skill-fill" style="width: 30%"></div>
+					</div>
+				</div>
+				<div class="skill">
+					<div class="skill-header">
+						<div class="skill-info">
+							<img src="icons/figma.svg" alt="Figmaアイコン">
+							<span>Figma</span>
+						</div>
+						<span class="percent">30%</span>
+					</div>
+					<div class="skill-bar">
+						<div class="skill-fill" style="width: 30%"></div>
+					</div>
+				</div>
+			<a href="about.html" class="btn-link">view more</a>
+		</div>
+
+		<div class="section-box">
+			<div class="about-header">
+				<div class="about-box">
+					<div class="h1-bg-wrapper">
+						<img src="icons/hx.jpeg" alt="紫陽花" class="h1-bg-image">
+						<h1>WORKS</h1>
+						<p class="subtitle">制作物</p>
+					</div>
+				</div>
+				<div class="works-slider">
+					<button class="prev-button"> ＜ </button>
+					<ul class="slider-track">
+						<li class="slide">
+							<a href="works_diary.html">
+								<img src="icons/home.png" alt="作品サムネイル">
+							</a>
+							<p>ポートフォリオ</p>
+						</li>
+						<li class="slide">
+							<a href="diary.html">
+								<img src="icons/diary home.png" alt="作品サムネイル">
+							</a>
+							<p>黙示録ノ記憶</p>
+						</li>
+						<li class="slide">
+							<a href="diary_LP.html">
+								<img src="icons/LP main.png" alt="作品サムネイル">
+							</a>
+							<p>黙示録の記憶 LP</p>
+						</li>
+					</ul>
+					<button class="next-button"> ＞ </button>
+				</div>
+				<a href="works.html" class="btn-link">all view</a>
+			</div>
+		</div>
+				
+		<div class="section-box">
+			<div class="about-header">
+				<div class="about-box">
+					<div class="h1-bg-wrapper">
+						<img src="icons/hx.jpeg" alt="紫陽花" class="h1-bg-image">
+						<h1>CONTACT</h1>
+						<p>お問い合わせ</p>
+					</div>
+				</div>
+			</div>
+			<a href="contact.html" class="btn-link">お問い合わせページ</a>
+		</div>
+</main>
+		<footer class="footer">
+			<div class="footer-content">
+				<p>&copy; 2025 OTAKI RUKA. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    const prev = document.querySelector('.prev-button');
+    const next = document.querySelector('.next-button');
+    const slider = document.querySelector('.works-slider'); // スライダー全体に反応させる
+    let index = 0;
+    let intervalId;
+
+    const updateSlider = () => {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    const startAutoSlide = () => {
+      intervalId = setInterval(() => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+      }, 5000);
+    };
+
+    const stopAutoSlide = () => {
+      clearInterval(intervalId);
+    };
+
+    // 自動スライド開始
+    startAutoSlide();
+
+    // ←ボタン
+    prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+
+    // →ボタン
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    });
+
+    // カーソルがスライダーに当たったらスライド停止
+    slider.addEventListener('mouseenter', stopAutoSlide);
+
+    // カーソルが離れたらスライド再開
+    slider.addEventListener('mouseleave', startAutoSlide);
+  });
+</script>
+</html>
