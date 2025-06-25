@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
 }
 
 .site-title {
@@ -35,6 +35,7 @@ body {
   text-align: center;
   font-size: 24px;
   margin: 0;
+  align-self: flex-start; /* ← これで上に寄せられます */
 }
 
 .nav-links {
@@ -61,7 +62,7 @@ main {
 .section-box {
   font-family: 'Zen Maru Gothic', sans-serif;
   background-color: #fff;
-  max-width: 800px;
+  max-width: 900px;
   margin: 60px auto;
   padding: 40px 20px;
   border-radius: 16px;
@@ -128,13 +129,50 @@ main {
 
 .about-flex {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  gap: 1.5rem;
   flex-wrap: wrap; /* モバイルで縦並びに */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  margin-top: -60px; /* 必要に応じて調整 */
 }
 
-/* 写真のラッパー */
 .about-wrapper {
   flex: 0 0 auto;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;     /* 常に正方形 */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  flex: 1;
+  min-width: 280px;
+  line-height: 1.8;
+}
+
+/* スマホ対応（画面幅が狭い場合） */
+@media (max-width: 768px) {
+  .about-wrapper {
+    display: flex;
+  justify-content: center;
+  width: 100%;
+  }
+
+  .about-flex {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
 }
 
 /* 写真本体 */
@@ -145,26 +183,6 @@ main {
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-left: 10px;
-}
-
-/* テキスト部分 */
-.about-text {
-  flex: 1;
-  min-width: 260px;
-  line-height: 1.8;
-}
-
-/* モバイル対応：縦並び + 中央寄せ */
-@media (max-width: 640px) {
-  .about-flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text {
-    text-align: center;
-  }
 }
 
 
