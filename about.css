@@ -1,52 +1,6 @@
 @charset "UTF-8";
 
 
-.about-flex {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap; /* モバイルで縦並びに */
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  margin-top: -60px; /* 必要に応じて調整 */
-}
-
-.about-wrapper {
-  flex: 0 0 auto;
-}
-
-.about-photo {
-  width: 100%;
-  max-width: 200px;
-  aspect-ratio: 1 / 1;     /* 常に正方形 */
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.about-content {
-  flex: 1;
-  min-width: 280px;
-  line-height: 1.8;
-}
-
-/* スマホ対応（画面幅が狭い場合） */
-@media (max-width: 640px) {
-  .about-flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-content {
-    text-align: center;
-  }
-
-  .about-photo {
-    margin-bottom: 1rem;
-  }
-}
-
 .about-content p {
   font-size: 16px;
   color: #444;
@@ -156,16 +110,6 @@ h2 {
   color: #333;
   border-left: 4px solid #a5c8e1;
   padding-left: 10px;
-}
-
-/* お問い合わせセクション */
-.contact-form-section {
-  background-color: #ffffff;
-  max-width: 620px;
-  margin: 40px auto;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
 }
 
 .form-container h2 {
