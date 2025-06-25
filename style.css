@@ -22,27 +22,27 @@ body {
   z-index: 1000;            /* 他要素の上に出す */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 1rem 2rem;
 }
+
 .site-title {
-  font-size: 24px;
   font-weight: bold;
   text-align: center;
+  font-size: 24px;
   margin: 0;
 }
+
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
+  gap: 1.5rem;
+  list-style: none;
 }
+
 .nav-links li a {
   text-decoration: none;
   color: #333;
