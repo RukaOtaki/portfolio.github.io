@@ -33,6 +33,8 @@ body {
 .site-title {
   font-size: 24px;
   font-weight: bold;
+  text-align: center;
+  margin: 0;
 }
 .nav-links {
   list-style: none;
