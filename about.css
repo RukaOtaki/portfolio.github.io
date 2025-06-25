@@ -158,31 +158,6 @@ h2 {
   padding-left: 10px;
 }
 
-.site-title {
-  text-align: center;
-  font-size: 24px;
-  margin: 0;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-  margin: 20px 0 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
 /* お問い合わせセクション */
 .contact-form-section {
   background-color: #ffffff;
