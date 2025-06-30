@@ -142,22 +142,28 @@ body {
 
 
 .carousel-btn {
-  background-color: rgba(165, 200, 225, 0.8);
-  border: none;
-  font-size: 24px;
-  padding: 10px 14px;
-  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(173, 216, 230, 0.3); /* やさしい水色＋透明感 */
+  color: #5c6ac4; /* 紫陽花の花びらのような淡い青紫 */
+  border: 1px solid rgba(173, 216, 230, 0.5);
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  z-index: 10;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(173, 216, 230, 0.3); /* 儚さを演出するやわらか影 */
+  backdrop-filter: blur(4px); /* ガラスっぽい透明感 */
+  transition: all 0.3s ease;
 }
 
 .carousel-btn.prev {
-  left: 10px;
+  left: 0px;
 }
 
 .carousel-btn.next {
-  right: 10px;
+  right: 0px;
 }
 
 .carousel-btn:hover {
