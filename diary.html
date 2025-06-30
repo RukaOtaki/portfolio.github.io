@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>HOME</title>
 		<link rel="stylesheet" href="explanation.css">
+		<script src="animation.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 	</head>
 	<body>
@@ -12,10 +13,10 @@
 				<h2 class="site-title">OTAKI RUKA</h2>
 				<nav>
 					<ul class="nav-links">
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="about.html">ABOUT</a></li>
-						<li><a href="works.html">WORKS</a></li>
-						<li><a href="contact.html">CONTACT</a></li>
+						<li><a href="index.html" class="page-link">HOME</a></li>
+						<li><a href="about.html" class="page-link">ABOUT</a></li>
+						<li><a href="works.html" class="page-link">WORKS</a></li>
+						<li><a href="contact.html" class="page-link">CONTACT</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -78,7 +79,7 @@
 						<a href="https://rukaotaki.github.io/diary.github.io/" target="_blank">▶︎ サイトを見る</a>
 					</p>
 					<p class="link-button">
-						<a href="diary_LP.html">▶︎ 次の作品へ</a>
+						<a href="diary_LP.html" class="page-link">▶︎ 次の作品へ</a>
 					</p>
 				</div>
 			</div>
@@ -90,38 +91,39 @@
 			</div>
 		</footer>
     </body>
+
 	<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector(".carousel-track");
-    const slides = document.querySelectorAll(".carousel-slide");
-    const nextBtn = document.querySelector(".carousel-btn.next");
-    const prevBtn = document.querySelector(".carousel-btn.prev");
-    let currentIndex = 0;
-    const slideCount = slides.length;
+		document.addEventListener("DOMContentLoaded", () => {
+			const track = document.querySelector(".carousel-track");
+			const slides = document.querySelectorAll(".carousel-slide");
+			const nextBtn = document.querySelector(".carousel-btn.next");
+			const prevBtn = document.querySelector(".carousel-btn.prev");
+			let currentIndex = 0;
+			const slideCount = slides.length;
 
-    function updateSlide() {
-      const slideWidth = slides[0].clientWidth;
-      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    }
+			function updateSlide() {
+				const slideWidth = slides[0].clientWidth;
+				track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+			}
 
-    function showNext() {
-      currentIndex = (currentIndex + 1) % slideCount;
-      updateSlide();
-    }
+			function showNext() {
+				currentIndex = (currentIndex + 1) % slideCount;
+				updateSlide();
+			}
 
-    function showPrev() {
-      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-      updateSlide();
-    }
+			function showPrev() {
+				currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+				updateSlide();
+			}
 
-    nextBtn.addEventListener("click", showNext);
-    prevBtn.addEventListener("click", showPrev);
+			nextBtn.addEventListener("click", showNext);
+			prevBtn.addEventListener("click", showPrev);
 
-    // 自動スライド（5秒ごと）
-    setInterval(showNext, 5000);
+			// 自動スライド（5秒ごと）
+			setInterval(showNext, 5000);
 
-    // 初期化
-    updateSlide();
-  });
-</script>
+			// 初期化
+			updateSlide();
+		});
+	</script>
 </html>
