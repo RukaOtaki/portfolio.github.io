@@ -1,13 +1,40 @@
 @charset "UTF-8";
 
 /* ベース設定 */
+/* bodyのスタイルで、全体のフェードイン・フェードアウトを管理 */
 body {
   margin: 0;
   padding: 0;
   background-color: #f7f9fa;
   color: #333;
   line-height: 1.6;
+  opacity: 0;  /* 初期状態は透明 */
+  transition: opacity 1s ease-in-out; /* 1秒間でフェードイン */
 }
+
+/* ページ遷移中のフェードアウト */
+.page-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: opacity 1s ease-in-out; /* アニメーションの遷移 */
+}
+
+.page-link:active {
+  opacity: 0.5; /* リンクを押すと少し透明に */
+}
+
+/* 新しいページのふわっと表示 */
+.page-enter {
+  opacity: 0; /* 初めは透明 */
+  transition: opacity 1s ease-in-out;
+}
+
+.page-enter.page-enter-active {
+  opacity: 1; /* 1秒後に完全に表示 */
+}
+
 
 /* ヘッダー */
 .header {
