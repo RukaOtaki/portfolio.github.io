@@ -4,8 +4,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>HOME</title>
-		<link rel="stylesheet" href="index.css">
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="index.css">
+		<script src="animation.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 	</head>
 	<body>
@@ -14,18 +15,17 @@
 				<h2 class="site-title">OTAKI RUKA</h2>
 				<nav>
 					<ul class="nav-links">
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="about.html">ABOUT</a></li>
-						<li><a href="works.html">WORKS</a></li>
-						<li><a href="contact.html">CONTACT</a></li>
+						<li><a href="index.html" class="page-link">HOME</a></li>
+						<li><a href="about.html" class="page-link">ABOUT</a></li>
+						<li><a href="works.html" class="page-link">WORKS</a></li>
+						<li><a href="contact.html" class="page-link">CONTACT</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
 <main>
 		<div class="top-box">
-			<div class="top-text">
-			</div>
+			<div class="top-text"></div>
 		</div>
 
 		<div class="section-box">
@@ -145,51 +145,51 @@
 			</div>
 		</footer>
 	</body>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector('.slider-track');
-    const slides = document.querySelectorAll('.slide');
-    const prev = document.querySelector('.prev-button');
-    const next = document.querySelector('.next-button');
-    const slider = document.querySelector('.works-slider'); // スライダー全体に反応させる
-    let index = 0;
-    let intervalId;
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const track = document.querySelector('.slider-track');
+			const slides = document.querySelectorAll('.slide');
+			const prev = document.querySelector('.prev-button');
+			const next = document.querySelector('.next-button');
+			const slider = document.querySelector('.works-slider'); // スライダー全体に反応させる
+			let index = 0;
+			let intervalId;
 
-    const updateSlider = () => {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    };
+	 		const updateSlider = () => {
+				track.style.transform = `translateX(-${index * 100}%)`;
+			};
 
-    const startAutoSlide = () => {
-      intervalId = setInterval(() => {
-        index = (index + 1) % slides.length;
-        updateSlider();
-      }, 5000);
-    };
+			const startAutoSlide = () => {
+				intervalId = setInterval(() => {
+					index = (index + 1) % slides.length;
+					updateSlider();
+				}, 5000);
+			};
 
-    const stopAutoSlide = () => {
-      clearInterval(intervalId);
-    };
+			const stopAutoSlide = () => {
+				clearInterval(intervalId);
+			};
 
-    // 自動スライド開始
-    startAutoSlide();
+			// 自動スライド開始
+			startAutoSlide();
 
-    // ←ボタン
-    prev.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateSlider();
-    });
+			// ←ボタン
+			prev.addEventListener('click', () => {
+				index = (index - 1 + slides.length) % slides.length;
+				updateSlider();
+			});
 
-    // →ボタン
-    next.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateSlider();
-    });
+			// →ボタン
+			next.addEventListener('click', () => {
+				index = (index + 1) % slides.length;
+				updateSlider();
+			});
 
-    // カーソルがスライダーに当たったらスライド停止
-    slider.addEventListener('mouseenter', stopAutoSlide);
+			// カーソルがスライダーに当たったらスライド停止
+			slider.addEventListener('mouseenter', stopAutoSlide);
 
-    // カーソルが離れたらスライド再開
-    slider.addEventListener('mouseleave', startAutoSlide);
-  });
-</script>
+			// カーソルが離れたらスライド再開
+			slider.addEventListener('mouseleave', startAutoSlide);
+		});
+	</script>
 </html>
