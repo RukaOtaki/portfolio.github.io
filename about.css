@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 .about-content p {
   font-size: 16px;
   color: #444;
@@ -83,10 +82,24 @@ h2 {
   position: relative;
 }
 
+/* 初期状態では幅0% かつアニメーションなし */
 .skill-fill {
   height: 100%;
   background-color: #a5c8e1;
   border-radius: 4px;
+  width: 0%; /* 初期状態は幅0% */
+  animation: none; /* 初期状態ではアニメーションなし */
+}
+
+/* アニメーションの定義 */
+@keyframes fillSkillBar {
+  0% {
+    width: 0%;
+  }
+}
+/* スクロールで表示されたときにアニメーションが適用される */
+.skill.visible .skill-fill {
+  animation: fillSkillBar 2s ease-in-out forwards; /* .visibleクラス追加でアニメーション開始 */
 }
 
 .skills-grid {
@@ -137,6 +150,7 @@ h2 {
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
+  text-align: left;
 }
 
 .form-group input, 
