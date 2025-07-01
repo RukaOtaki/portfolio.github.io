@@ -48,39 +48,38 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 9px;
-}
-
 .site-title {
   font-weight: bold;
   text-align: center;
   font-size: 24px;
   margin-top: 10px;
-  align-self: flex-start; /* ← これで上に寄せられます */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 9px;
 }
 
 .nav-links {
   display: flex;
   gap: 0.8rem;
   list-style: none;
+  padding: 10px 0px;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
   transition: color 0.3s ease;
 }
+
 .nav-links li a:hover {
   color: #a5c8e1;
 }
 
 main {
-  padding-top: 60px;  /* ヘッダーの高さ80px + 余裕 */
+  padding-top: 60px;
 }
 
 /* セクション共通 */
@@ -151,6 +150,7 @@ main {
   color: #666;
 }
 
+
 .about-flex {
   display: flex;
   align-items: center;
@@ -208,6 +208,7 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-left: 10px;
 }
+
 
 /* フッター */
 .footer {
