@@ -103,71 +103,9 @@ body {
   box-shadow: 0 6px 12px rgba(165, 200, 225, 0.4);
 }
 
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  position: relative;
-  max-width: 500px; /* 画像＋ボタンの合計幅に調整 */
-  margin: 0 auto;
-}
-
-.carousel {
-  width: 100%;
-  max-width: 400px;
-  height: 640px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
-}
-
-.carousel-slide {
-  flex: 0 0 100%; /* 1枚あたりの幅を親にフィット */
-  height: 640px;
-  object-fit: cover;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(173, 216, 230, 0.3); /* やさしい水色＋透明感 */
-  color: #5c6ac4; /* 紫陽花の花びらのような淡い青紫 */
-  border: 1px solid rgba(173, 216, 230, 0.5);
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(173, 216, 230, 0.3); /* 儚さを演出するやわらか影 */
-  backdrop-filter: blur(4px); /* ガラスっぽい透明感 */
-  transition: all 0.3s ease;
-}
-
-.carousel-btn.prev {
-  left: 0px;
-}
-
-.carousel-btn.next {
-  right: 0px;
-}
-
-.carousel-btn:hover {
-  background-color: rgba(107, 161, 190, 0.9);
+.work-img p {
+  text-align: right;
+  padding: 0px 50px;
 }
 
 /* フッター */
