@@ -54,9 +54,17 @@ body {
   color: #a5c8e1;
 }
 
-.work-item img {
+.works-top {
   display: block;             /* ← ブロック要素にする */
   margin: 0 auto 1rem auto;   /* ← 左右中央揃え＆下に余白 */
+  width: 80%;
+  height: 80%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.works-img {
+  display: block;             /* ← ブロック要素にする */
+  margin: 0 auto 0 auto;   /* ← 左右中央揃え＆下に余白 */
   width: 80%;
   height: 80%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
